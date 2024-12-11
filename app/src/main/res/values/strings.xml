@@ -1,139 +1,132 @@
 <resources>
     <!-- General Application Strings -->
     <string name="app_name">HelpMe_App</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configuración</string>
 
     <!-- Navigation Labels -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first_fragment_label">Primer Fragmento</string>
+    <string name="second_fragment_label">Segundo Fragmento</string>
+    <string name="hello_blank_fragment">Hola, fragmento vacío</string>
 
     <!-- Registro Asesor -->
-    <string name="fragment_registro_asesor">Registro Asesor</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="fragment_registro_asesor">Registro de Asesor</string>
+    <string name="next">Siguiente</string>
+    <string name="previous">Anterior</string>
 
     <!-- Registro General -->
     <string name="txttitleRegister">Déjanos tu <font color="#0000"><b>correo</b></font> para empezar juntos</string>
-    <string name="txtcontidions">Al continuar acepto las condiciones de <b>Helpme!</b>. <font color="#0000"><b><u>Políticas de Privacidad y Términos de Uso</u></b></font></string>
+    <string name="txtcontidions">Al continuar, acepto las condiciones de <b>HelpMe!</b>. <font color="#0000"><b><u>Políticas de Privacidad y Términos de Uso</u></b></font></string>
     <string name="txthintEmail">Ingrese su correo</string>
     <string name="btnNext">Siguiente</string>
 
     <!-- Pregunta Estudiante o Asesor -->
-    <string name="txtquestionStudentAdviser">¿Eres <font color="#F6A700"><b>Estudiante🎓</b></font> o <font color="#F6A700"><b>Asesor Académico 📚</b></font>? Elije una opcion para continuar</string>
+    <string name="txtquestionStudentAdviser">¿Eres <font color="#F6A700"><b>Estudiante 🎓</b></font> o <font color="#F6A700"><b>Asesor Académico 📚</b></font>? Elige una opción para continuar</string>
     <string name="btnStudent">Estudiante</string>
-    <string name="btnAdviser">Asesor Academico</string>
+    <string name="btnAdviser">Asesor Académico</string>
 
     <!-- Registro Asesor -->
     <string name="txttitleAdviser">Ahora, hagamos que te registres como <font color="#F6A700"><b>Asesor</b></font></string>
-    <string name="code">Codigo</string>
+    <string name="code">Código</string>
     <string name="txtName">Nombres</string>
     <string name="txtLastName">Apellidos</string>
-    <string name="txtIdentity">Doc. Identidad</string>
+    <string name="txtIdentity">Doc. de Identidad</string>
     <string name="txtPassword">Contraseña</string>
     <string name="txtbirthdate">Fecha de Nacimiento</string>
-    <string name="acceptNotification">Acepto la <b><u>Política de Privacidad</u></b> de Helpme! y <b><u>Condiciones de Uso</u></b></string>
-    <string name="privacyPolicy">Acepto recibir correos electronicos de actualizaciones de Helpme!</string>
+    <string name="acceptNotification">Acepto la <b><u>Política de Privacidad</u></b> de HelpMe! y <b><u>Condiciones de Uso</u></b></string>
+    <string name="privacyPolicy">Acepto recibir correos electrónicos con actualizaciones de HelpMe!</string>
     <string name="btncreateAccount">Crear Cuenta</string>
 
     <!-- Bienvenida Personalizada Asesor -->
     <string name="personalizedWelcomeAdviser">Ayúdanos a personalizar tu experiencia para que se ajuste a tus necesidades. %1$s</string>
-    <string name="nameEspecialidad">Especialidad/Area de Experiencia</string>
+    <string name="nameEspecialidad">Especialidad/Área de Experiencia</string>
     <string name="ageExperience">Años de Experiencia</string>
-    <string name="codeColegiatura">Codigo de Colegiatura</string>
+    <string name="codeColegiatura">Código de Colegiatura</string>
     <string name="typeTeaching">Tipo de Enseñanza</string>
     <string name="disponibilidad">Disponibilidad</string>
     <string name="Certifications">Certificados</string>
-    <string name="TokensForSesion">Tokens por Sesion</string>
+    <string name="TokensForSesion">Tokens por Sesión</string>
     <string name="typeAdviser">Tipo de Asesoría</string>
     <string name="TokensForPay">Tokens (Costo/Asesoría)</string>
     <string name="HoursSesions">Duración (Horas)</string>
-
 
     <!-- Inicio de Sesión -->
     <string name="Welcome">BIENVENIDO</string>
     <string name="btnLogin">Iniciar Sesión</string>
     <string name="password">Contraseña</string>
     <string name="Newlogin">Regístrate</string>
-    <string name="recoverpassword">¿Has olvidado tu contraseña?</string>
-    <string name="NewRegistroLogin">¿No estas registrado?</string>
+    <string name="recoverpassword">¿Olvidaste tu contraseña?</string>
+    <string name="NewRegistroLogin">¿No estás registrado?</string>
 
     <!-- Registro - Segunda Pantalla -->
     <string name="register">REGISTRO</string>
-    <string name="email2">Email</string>
-    <string name="repitcontraseña">Repite contraseña</string>
+    <string name="email2">Correo</string>
+    <string name="repitcontraseña">Repite la contraseña</string>
     <string name="btnRegister">Continuar</string>
     <string name="Chkbtnstudent">Estudiante</string>
     <string name="Chkbtnadviser">Asesor</string>
 
     <!-- Registro Estudiante -->
     <string name="titleWelcomStudent"><font color="#FF000000">Ahora, hagamos que te registres como </font><font color="#FFFFA500">Estudiante</font></string>
-
-    <string name="nameStudent">Nombre estudiante</string>
-    <string name="lastnameStudent">Apellidos estudiante</string>
+    <string name="nameStudent">Nombre del Estudiante</string>
+    <string name="lastnameStudent">Apellidos del Estudiante</string>
     <string name="passwordStudent">Contraseña</string>
-    <string name="welconCode">Tu correo a registrarse es: <font color="#FFFFA500">%1$s</font></string>
+    <string name="welconCode">Tu correo registrado es: <font color="#FFFFA500">%1$s</font></string>
 
     <!-- Bienvenida Personalizada Estudiante -->
-    <string name="personalizedWelcomeStudentTitle">Estas a un paso de disfrutar de la mejor asesoría.</string>
+    <string name="personalizedWelcomeStudentTitle">Estás a un paso de disfrutar de la mejor asesoría.</string>
     <string name="personalizedWelcomeStudent">Ayúdanos a personalizar tu experiencia para que se ajuste a tus necesidades académicas.</string>
-    <string name="nameInstitution">Institucion educativa</string>
-    <string name="nameProgramaAcademico">Programa academico</string>
-    <string name="levelEducation">Nivel de estudios</string>
+    <string name="nameInstitution">Institución Educativa</string>
+    <string name="nameProgramaAcademico">Programa Académico</string>
+    <string name="levelEducation">Nivel de Estudios</string>
     <string name="btnFollowing">Siguiente</string>
 
-
-    <!-- PERSONALIZACION ACADEMICA -->
-    <string name="personalizacionAcad">Hola <font color="#FFFFA500">%1$s</font> , ¡estás a un paso de disfrutar de la mejor asesoría!</string>
+    <!-- Personalización Académica -->
+    <string name="personalizacionAcad">Hola <font color="#FFFFA500">%1$s</font>, ¡estás a un paso de disfrutar de la mejor asesoría!</string>
     <string name="descripPersonalizacion">Ayúdanos a personalizar tu experiencia para que se ajuste a tus necesidades académicas.</string>
     <string name="IEduc">Institución Educativa</string>
-    <string name="PoC">Programa o carrerra</string>
+    <string name="PoC">Programa o Carrera</string>
     <string name="selecCoS">Seleccionar Ciclo o Semestre</string>
 
-
-
     <!-- Intereses Académicos -->
-    <string name="interesAcademicos">Selecciona tus intereses Académicos</string>
+    <string name="interesAcademicos">Selecciona tus Intereses Académicos</string>
     <string name="subInteresAcademic">¡Estamos casi listos!</string>
-    <string name="matematica">Matematica</string>
-    <string name="tecnology">Tecnologia</string>
-    <string name="psicologia">Psicologia</string>
-    <string name="educFinanciera">Educacion Finaciera</string>
+    <string name="matematica">Matemática</string>
+    <string name="tecnology">Tecnología</string>
+    <string name="psicologia">Psicología</string>
+    <string name="educFinanciera">Educación Financiera</string>
     <string name="history">Historia</string>
-    <string name="programacion">Programacion</string>
+    <string name="programacion">Programación</string>
     <string name="siguiente">Siguiente</string>
 
     <!-- Finalizar Registro Estudiante -->
-    <string name="finishRegisterStudent">!Vamos a brillar en tu camino académico¡</string>
+    <string name="finishRegisterStudent">¡Vamos a brillar en tu camino académico!</string>
     <string name="btnFinish">Finalizar</string>
 
     <!-- Página Principal -->
     <string name="searchHomePage">Buscar...</string>
-    <string name="btnRegistrateLogin">Registrate</string>
+    <string name="btnRegistrateLogin">Regístrate</string>
 
     <!-- Perfil -->
-    <string name="PoliticasRegistro">Al continuar, acepto las condiciones de Helpme!. Políticas de privacidad y Términos de Uso</string>
-    <string name="descripcion"> Frase para poner en descripción,Frase para poner en descripción</string>
+    <string name="PoliticasRegistro">Al continuar, acepto las condiciones de HelpMe!. Políticas de Privacidad y Términos de Uso</string>
+    <string name="descripcion">Frase para poner en descripción</string>
     <string name="tokens">100 TOKENS</string>
     <string name="soles">500 Soles</string>
-    <string name="Uni">UNIVERSIDAD SEÑOR DE SIPAN</string>
-    <string name="editperfil">editar perfil</string>
-    <string name="escuela">INGENIERIA DE SISTEMAS</string>
+    <string name="Uni">UNIVERSIDAD SEÑOR DE SIPÁN</string>
+    <string name="editperfil">Editar Perfil</string>
+    <string name="escuela">INGENIERÍA DE SISTEMAS</string>
     <string name="aseorest">ESTUDIANTE</string>
-    <string name="description_ase1">ASESORIA 1</string>
-    <string name="description_ase2">ASESORIA 2</string>
-    <string name="description_ase3">ASESORIA 3</string>
+    <string name="description_ase1">ASESORÍA 1</string>
+    <string name="description_ase2">ASESORÍA 2</string>
+    <string name="description_ase3">ASESORÍA 3</string>
     <string name="mensajes">Mensajes</string>
-    <string name="economia">Economia</string>
-    <string name="NDEase">Asesorias(3)</string>
+    <string name="economia">Economía</string>
+    <string name="NDEase">Asesorías (3)</string>
 
-
-    //CHAT
+    <!-- Chat -->
     <string name="title_Chat">Chat</string>
     <string name="user_Yo">Yo</string>
     <string name="user_Asesor">Asesor</string>
 
-    //CHATS
+    <!-- Chats -->
     <string name="title_Mensajes">Mensajes</string>
-
 </resources>
