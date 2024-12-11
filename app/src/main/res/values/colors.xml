@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="principalColor">#F6A700</color>
+    <color name="secondaryColor">#E1AD01</color>
+    <color name="secondary">#FFC107</color>
+    <color name="orange">#FFFFA500</color>
+    <color name="backgroundGeneral">#383737</color>
+    <color name="mostaza">#E1AD01</color>
+    <color name="gray">#FF808080</color>
+    <color name="gray2">#FF808080</color>
+    <color name="BackgroundMensaje">#4E3535</color>
+    <!-- colors.xml -->
+    <color name="primary_blue">#3B82F6</color> <!-- Color azul para botones de "Estudiante" y "Ingeniería de Sistemas" -->
+    <color name="token_red">#FF4A4A</color> <!-- Color rojo para Tokens -->
+    <color name="soles_green">#4CAF50</color> <!-- Color verde para Soles -->
+    <color name="text_gray">#888888</color> <!-- Color gris para descripciones y fecha -->
+    <color name="background_light">#F5F5F5</color> <!-- Color de fondo general -->
+
+
+    <!-- mensajes -->
+    <color name="light_gray">#E0E0E0</color>
+    <color name="light_blue">#BBDEFB</color>
+</resources>
