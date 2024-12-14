@@ -56,10 +56,16 @@
         android:width="250dp"
         android:text="@string/txtcontidions"
         android:textSize="15sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:textColorLink="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/btnContinue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtEmail" />
+
 
     <Button
         android:id="@+id/btnContinue"
