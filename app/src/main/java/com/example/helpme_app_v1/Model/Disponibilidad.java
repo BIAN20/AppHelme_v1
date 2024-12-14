@@ -1,13 +1,13 @@
 package com.example.helpme_app_v1.Model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalTime;
 
 public class Disponibilidad implements Serializable {
 
-    private String disponibilidad[];
-    private Date horaInicio;
-    private Date horaFin;
+    private String[] disponibilidad;
+    private LocalTime horaInicio;
+    private LocalTime horaFin;
 
     public String[] getDisponibilidad() {
         return disponibilidad;
@@ -17,19 +17,19 @@ public class Disponibilidad implements Serializable {
         this.disponibilidad = disponibilidad;
     }
 
-    public Date getHoraInicio() {
+    public LocalTime getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(Date horaInicio) {
+    public void setHoraInicio(LocalTime horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public Date getHoraFin() {
+    public LocalTime getHoraFin() {
         return horaFin;
     }
 
-    public void setHoraFin(Date horaFin) {
+    public void setHoraFin(LocalTime horaFin) {
         this.horaFin = horaFin;
     }
 }

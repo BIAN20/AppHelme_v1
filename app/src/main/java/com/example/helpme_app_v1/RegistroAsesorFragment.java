@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.helpme_app_v1.Interface.api.MyApi;
+import com.example.helpme_app_v1.Model.Disponibilidad;
 import com.example.helpme_app_v1.Model.Persona;
 import com.example.helpme_app_v1.Model.Usuario;
 import com.example.helpme_app_v1.databinding.FragmentRegistroAsesorBinding;
@@ -85,7 +86,7 @@ public class RegistroAsesorFragment extends Fragment {
         Persona persona = new Persona();
         String[] selectespecialidades = new ArrayList<>().toArray(new String[0]);
         String emailFormat = getString(R.string.welconCode, usuario.getEmail());
-
+        Disponibilidad disponibilidad = new Disponibilidad();
         binding.tvSubTitle.setText(emailFormat);
 
         binding.etFechaNacimiento.setOnClickListener(new View.OnClickListener() {
@@ -158,7 +159,7 @@ public class RegistroAsesorFragment extends Fragment {
             }
             private void navegarAPersonalizacion() {
                 RegistroAsesorFragmentDirections.ActionRegistroAsesorFragmentToRAseEducationFragment action =
-                        RegistroAsesorFragmentDirections.actionRegistroAsesorFragmentToRAseEducationFragment(selectespecialidades, usuario, persona);
+                        RegistroAsesorFragmentDirections.actionRegistroAsesorFragmentToRAseEducationFragment(disponibilidad, selectespecialidades, usuario, persona);
                 NavHostFragment.findNavController(RegistroAsesorFragment.this).navigate(action);
             }
         });
