@@ -1,0 +1,56 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Imagen del avatar -->
+        <ImageView
+            android:id="@+id/avatar_asesoria"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/example_image"
+            android:layout_marginEnd="8dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Nombre o título -->
+            <TextView
+                android:id="@+id/text_titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gestión Deportiva"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <!-- Estado -->
+            <TextView
+                android:id="@+id/text_estado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pendiente"
+                android:textSize="14sp"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Modalidad -->
+    <TextView
+        android:id="@+id/text_modalidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Virtual"
+        android:textSize="14sp"
+        android:textColor="@color/gray" />
+</LinearLayout>

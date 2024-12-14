@@ -2,27 +2,23 @@ package com.example.helpme_app_v1.Model;
 
 import java.io.Serializable;
 
+import kotlin.text.StringsKt;
+import kotlin.text.UStringsKt;
+
 public class Asesor implements Serializable {
     private int aniosExperiencia;
-    private String especialidad;
     private String presentacion;
     private String enseniazaPreferida;
     private String codigoColegiatura;
+    private int calificacion;
+    private String certigoogledrive;
 
-    public int getAniosExperiencia() {
-        return aniosExperiencia;
+    public String getCertigoogledrive() {
+        return certigoogledrive;
     }
 
-    public void setAniosExperiencia(int aniosExperiencia) {
-        this.aniosExperiencia = aniosExperiencia;
-    }
-
-    public String getEspecialidad() {
-        return especialidad;
-    }
-
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
+    public void setCertigoogledrive(String certigoogledrive) {
+        this.certigoogledrive = certigoogledrive;
     }
 
     public String getPresentacion() {
@@ -33,12 +29,12 @@ public class Asesor implements Serializable {
         this.presentacion = presentacion;
     }
 
-    public String getCodigoColegiatura() {
-        return codigoColegiatura;
+    public int getAniosExperiencia() {
+        return aniosExperiencia;
     }
 
-    public void setCodigoColegiatura(String codigoColegiatura) {
-        this.codigoColegiatura = codigoColegiatura;
+    public void setAniosExperiencia(int aniosExperiencia) {
+        this.aniosExperiencia = aniosExperiencia;
     }
 
     public String getEnseniazaPreferida() {
@@ -47,5 +43,21 @@ public class Asesor implements Serializable {
 
     public void setEnseniazaPreferida(String enseniazaPreferida) {
         this.enseniazaPreferida = enseniazaPreferida;
+    }
+
+    public String getCodigoColegiatura() {
+        return codigoColegiatura;
+    }
+
+    public void setCodigoColegiatura(String codigoColegiatura) {
+        this.codigoColegiatura = codigoColegiatura;
+    }
+
+    public int getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(int calificacion) {
+        this.calificacion = calificacion;
     }
 }

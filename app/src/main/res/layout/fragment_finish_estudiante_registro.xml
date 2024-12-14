@@ -6,8 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".SecondFragment">
+
+    tools:context=".FinishEstudianteRegistroFragment">
 
     <ImageView
         android:id="@+id/LogoHelpme"
@@ -17,52 +17,40 @@
         android:src="@drawable/logo_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13999999" />
+        app:layout_constraintVertical_bias="0.318" />
 
     <TextView
-        android:id="@+id/titleSTUDENTADVISER"
+        android:id="@+id/titleComplete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:width="345dp"
-        android:text="@string/txtquestionStudentAdviser"
-        android:textSize="30sp"
+        android:layout_marginTop="28dp"
+        android:width="350dp"
+        android:textAlignment="center"
+        android:text="@string/finishRegisterStudent"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/LogoHelpme" />
 
     <Button
-        android:id="@+id/bntSTUDENT"
+        android:id="@+id/btnFinRegistro1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:width="250dp"
+        android:layout_marginTop="50dp"
+        android:width="265dp"
         android:height="58dp"
-        android:text="@string/btnStudent"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/btnFinish"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        android:backgroundTint="@color/mostaza"
-        app:layout_constraintBottom_toTopOf="@id/bntADVISER"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleSTUDENTADVISER" />
-
-    <Button
-        android:id="@+id/bntADVISER"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:width="250dp"
-        android:height="58dp"
-        android:text="@string/btnAdviser"
-        android:textSize="20sp"
-        android:backgroundTint="@color/mostaza"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bntSTUDENT" />
-
-
-
+        app:layout_constraintTop_toBottomOf="@id/titleComplete"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
