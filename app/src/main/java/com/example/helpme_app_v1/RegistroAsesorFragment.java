@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.helpme_app_v1.Interface.api.MyApi;
+import com.example.helpme_app_v1.Model.Asesor;
 import com.example.helpme_app_v1.Model.Disponibilidad;
 import com.example.helpme_app_v1.Model.Persona;
 import com.example.helpme_app_v1.Model.Usuario;
@@ -84,6 +85,7 @@ public class RegistroAsesorFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         Usuario usuario = RegistroAsesorFragmentArgs.fromBundle(getArguments()).getArgUsuario();
         Persona persona = new Persona();
+        Asesor asesor = new Asesor();
         String[] selectespecialidades = new ArrayList<>().toArray(new String[0]);
         String emailFormat = getString(R.string.welconCode, usuario.getEmail());
         Disponibilidad disponibilidad = new Disponibilidad();
@@ -107,7 +109,7 @@ public class RegistroAsesorFragment extends Fragment {
                     Toast.makeText(getContext(), "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
+                usuario.setPassword(binding.etPassword.getText().toString().trim());
                 usuario.setRol("Asesor");
                 persona.setNombre(binding.etNombres.getText().toString().trim());
                 persona.setApellidos(binding.etApellidos.getText().toString().trim());
@@ -159,7 +161,7 @@ public class RegistroAsesorFragment extends Fragment {
             }
             private void navegarAPersonalizacion() {
                 RegistroAsesorFragmentDirections.ActionRegistroAsesorFragmentToRAseEducationFragment action =
-                        RegistroAsesorFragmentDirections.actionRegistroAsesorFragmentToRAseEducationFragment(disponibilidad, selectespecialidades, usuario, persona);
+                        RegistroAsesorFragmentDirections.actionRegistroAsesorFragmentToRAseEducationFragment(asesor, disponibilidad, selectespecialidades, usuario, persona);
                 NavHostFragment.findNavController(RegistroAsesorFragment.this).navigate(action);
             }
         });

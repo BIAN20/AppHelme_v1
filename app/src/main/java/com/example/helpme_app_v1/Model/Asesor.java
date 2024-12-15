@@ -12,6 +12,15 @@ public class Asesor implements Serializable {
     private String codigoColegiatura;
     private int calificacion;
     private String certigoogledrive;
+    private String estado;
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 
     public String getCertigoogledrive() {
         return certigoogledrive;

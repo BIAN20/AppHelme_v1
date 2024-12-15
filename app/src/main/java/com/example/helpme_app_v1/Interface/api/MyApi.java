@@ -5,6 +5,10 @@ import com.example.helpme_app_v1.Model.Estudiantes.EstudianteRequest;
 import com.example.helpme_app_v1.Model.Estudiantes.EstudianteResponse;
 import com.example.helpme_app_v1.Model.InteresesAcademic.ResponseInteresesAcademic;
 
+import com.example.helpme_app_v1.Model.Asesores.ResponseAsesor;
+import com.example.helpme_app_v1.Model.Asesores.AsesorRequest;
+import com.example.helpme_app_v1.Model.Estudiantes.EstudianteResponse;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -22,4 +26,7 @@ public interface MyApi {
         Call<ResponseBody> verificardni(@Body Object datos);
         @POST("/crearestudiante")
         Call<EstudianteResponse> guardarEstudiante(@Body EstudianteRequest estudianteRequest);
+
+        @POST("/crearasesorapp")
+        Call<ResponseAsesor> guardarasesor(@Body AsesorRequest asesor);
 }

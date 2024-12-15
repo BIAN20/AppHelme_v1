@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.helpme_app_v1.Especialidades.ResponseEspecialidades;
 import com.example.helpme_app_v1.Interface.api.MyApi;
+import com.example.helpme_app_v1.Model.Asesor;
 import com.example.helpme_app_v1.Model.Disponibilidad;
 import com.example.helpme_app_v1.Model.Estudiante;
 import com.example.helpme_app_v1.Model.InteresesAcademic.ResponseInteresesAcademic;
@@ -98,7 +99,7 @@ public class EspecialidadesFragment extends Fragment {
         Persona persona = EspecialidadesFragmentArgs.fromBundle(getArguments()).getArgPersona();
         Disponibilidad disponibilidad = EspecialidadesFragmentArgs.fromBundle(getArguments()).getArgDisponibilidad();
         String[] especialidadesSeleccionadas = EspecialidadesFragmentArgs.fromBundle(getArguments()).getSelectedespecialides();
-
+        Asesor asesor = EspecialidadesFragmentArgs.fromBundle(getArguments()).getArgAsesor();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://grupo6tdam2024.pythonanywhere.com/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -131,7 +132,7 @@ public class EspecialidadesFragment extends Fragment {
             String[] interestsArray = selectedInterests.toArray(new String[0]);
 
             EspecialidadesFragmentDirections.ActionEspecialidadesFragmentToRAseEducationFragment action =
-                    EspecialidadesFragmentDirections.actionEspecialidadesFragmentToRAseEducationFragment(disponibilidad, interestsArray, usuario, persona);
+                    EspecialidadesFragmentDirections.actionEspecialidadesFragmentToRAseEducationFragment(asesor, disponibilidad, interestsArray, usuario, persona);
             NavHostFragment.findNavController(EspecialidadesFragment.this).navigate(action);
         });
     }

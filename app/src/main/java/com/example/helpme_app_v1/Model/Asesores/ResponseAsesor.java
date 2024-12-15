@@ -1,8 +1,17 @@
 package com.example.helpme_app_v1.Model.Asesores;
 
 public class ResponseAsesor {
-    private String Message;
+    private Object data;
+    private String menssage;
     private int status;
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
 
     public int getStatus() {
         return status;
@@ -12,11 +21,11 @@ public class ResponseAsesor {
         this.status = status;
     }
 
-    public String getMessage() {
-        return Message;
+    public String getMenssage() {
+        return menssage;
     }
 
-    public void setMessage(String message) {
-        Message = message;
+    public void setMenssage(String menssage) {
+        this.menssage = menssage;
     }
 }
