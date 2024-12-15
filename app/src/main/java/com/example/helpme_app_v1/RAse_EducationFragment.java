@@ -44,10 +44,11 @@ public class RAse_EducationFragment extends Fragment {
 
         Usuario usuario = RAse_EducationFragmentArgs.fromBundle(getArguments()).getArgUsuario();
         Persona persona = RAse_EducationFragmentArgs.fromBundle(getArguments()).getArgPersona();
+        Disponibilidad disponibilidad = RAse_EducationFragmentArgs.fromBundle(getArguments()).getArgDisponibilidad();
         String[] selectespecialidades = RAse_EducationFragmentArgs.fromBundle(getArguments()).getSelectedespecialides();
         Asesor asesor = new Asesor();
         Tokens tokens = new Tokens();
-        Disponibilidad disponibilidad = new Disponibilidad();
+
         //verificar que seleccionamos
         Toast.makeText(requireContext(), Arrays.toString(selectespecialidades), Toast.LENGTH_SHORT).show();
         binding.edEspecialidad.setOnClickListener(v -> showBottomSheetDialogEspecialidad());
@@ -66,7 +67,7 @@ public class RAse_EducationFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     RAse_EducationFragmentDirections.ActionRAseEducationFragmentToEspecialidadesFragment action =
-                            RAse_EducationFragmentDirections.actionRAseEducationFragmentToEspecialidadesFragment(selectespecialidades, usuario, persona);
+                            RAse_EducationFragmentDirections.actionRAseEducationFragmentToEspecialidadesFragment(disponibilidad, selectespecialidades, usuario, persona);
                     NavHostFragment.findNavController(RAse_EducationFragment.this).navigate(action);
                 }
         });

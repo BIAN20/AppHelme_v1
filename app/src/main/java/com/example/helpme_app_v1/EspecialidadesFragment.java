@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.helpme_app_v1.Especialidades.ResponseEspecialidades;
 import com.example.helpme_app_v1.Interface.api.MyApi;
+import com.example.helpme_app_v1.Model.Disponibilidad;
 import com.example.helpme_app_v1.Model.Estudiante;
 import com.example.helpme_app_v1.Model.InteresesAcademic.ResponseInteresesAcademic;
 import com.example.helpme_app_v1.Model.Persona;
@@ -95,6 +96,7 @@ public class EspecialidadesFragment extends Fragment {
         // Obtener argumentos (usuario, persona, y especialidades seleccionadas)
         Usuario usuario = EspecialidadesFragmentArgs.fromBundle(getArguments()).getArgUsuario();
         Persona persona = EspecialidadesFragmentArgs.fromBundle(getArguments()).getArgPersona();
+        Disponibilidad disponibilidad = EspecialidadesFragmentArgs.fromBundle(getArguments()).getArgDisponibilidad();
         String[] especialidadesSeleccionadas = EspecialidadesFragmentArgs.fromBundle(getArguments()).getSelectedespecialides();
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -129,7 +131,7 @@ public class EspecialidadesFragment extends Fragment {
             String[] interestsArray = selectedInterests.toArray(new String[0]);
 
             EspecialidadesFragmentDirections.ActionEspecialidadesFragmentToRAseEducationFragment action =
-                    EspecialidadesFragmentDirections.actionEspecialidadesFragmentToRAseEducationFragment(interestsArray, usuario, persona);
+                    EspecialidadesFragmentDirections.actionEspecialidadesFragmentToRAseEducationFragment(disponibilidad, interestsArray, usuario, persona);
             NavHostFragment.findNavController(EspecialidadesFragment.this).navigate(action);
         });
     }
