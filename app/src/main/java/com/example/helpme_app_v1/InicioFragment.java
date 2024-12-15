@@ -51,9 +51,27 @@ public class InicioFragment extends Fragment {
            // binding.bottomNavigationView.setSelectedItemId(R.id.home);
         }
 
-    //se borro lo de navegacion superior
+        binding.bottomNavigationView.setOnItemSelectedListener( item -> {
+            int itemId = item.getItemId();
 
-        return binding.getRoot();
+
+            if(itemId == R.id.home){
+                replaceFragment(new HomeFragment());
+                return true;
+            } else if (itemId == R.id.compras){
+                replaceFragment(new ComprasFragment());
+                return true;
+            }else if (itemId == R.id.bandeja) {
+                replaceFragment(new BandejaChatsFragment());
+                return true;
+            } else if (itemId == R.id.perfil) {
+                replaceFragment(new PerfilFragment());
+                return true;
+            }
+            return false;
+        });
+
+            return binding.getRoot();
     }
 
     private void replaceFragment(Fragment fragment) {
