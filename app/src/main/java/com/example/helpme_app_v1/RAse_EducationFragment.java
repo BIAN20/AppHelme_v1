@@ -1,8 +1,8 @@
 package com.example.helpme_app_v1;
 
 import android.content.res.ColorStateList;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +14,26 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.helpme_app_v1.Interface.api.MyApi;
 import com.example.helpme_app_v1.Model.Asesor;
 import com.example.helpme_app_v1.Model.Disponibilidad;
+import com.example.helpme_app_v1.Model.Estudiantes.EstudianteRequest;
+import com.example.helpme_app_v1.Model.Asesores.ResponseAsesor;
+import com.example.helpme_app_v1.Model.Asesores.AsesorRequest;
+import com.example.helpme_app_v1.Model.Estudiantes.EstudianteResponse;
 import com.example.helpme_app_v1.Model.Persona;
-import com.example.helpme_app_v1.Model.Tokens;
 import com.example.helpme_app_v1.Model.Usuario;
 import com.example.helpme_app_v1.databinding.FragmentRAseEducationBinding;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import java.io.IOException;
 import java.util.Arrays;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class RAse_EducationFragment extends Fragment {
@@ -44,10 +55,10 @@ public class RAse_EducationFragment extends Fragment {
 
         Usuario usuario = RAse_EducationFragmentArgs.fromBundle(getArguments()).getArgUsuario();
         Persona persona = RAse_EducationFragmentArgs.fromBundle(getArguments()).getArgPersona();
-        Disponibilidad disponibilidad = RAse_EducationFragmentArgs.fromBundle(getArguments()).getArgDisponibilidad();
+        Disponibilidad disponibilidad = new Disponibilidad();
         String[] selectespecialidades = RAse_EducationFragmentArgs.fromBundle(getArguments()).getSelectedespecialides();
-        Asesor asesor = new Asesor();
-        Tokens tokens = new Tokens();
+        Asesor asesor = RAse_EducationFragmentArgs.fromBundle(getArguments()).getArgAsesor();
+
 
         //verificar que seleccionamos
         Toast.makeText(requireContext(), Arrays.toString(selectespecialidades), Toast.LENGTH_SHORT).show();
@@ -67,7 +78,7 @@ public class RAse_EducationFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     RAse_EducationFragmentDirections.ActionRAseEducationFragmentToEspecialidadesFragment action =
-                            RAse_EducationFragmentDirections.actionRAseEducationFragmentToEspecialidadesFragment(disponibilidad, selectespecialidades, usuario, persona);
+                            RAse_EducationFragmentDirections.actionRAseEducationFragmentToEspecialidadesFragment(asesor, disponibilidad, selectespecialidades, usuario, persona);
                     NavHostFragment.findNavController(RAse_EducationFragment.this).navigate(action);
                 }
         });
@@ -78,17 +89,24 @@ public class RAse_EducationFragment extends Fragment {
             public void onClick(View view) {
 
 
-                if ((especialidadSeleccionada != null && enseniazaPreferidaSeleccionada != null && aniosExperienciaSeleccionada != null) || binding.edCertifications.getText().toString().trim().isEmpty() ||  binding.edPresentation.getText().toString().trim().isEmpty()){
+                if (!binding.edCertifications.getText().toString().trim().isEmpty()
+                        && !binding.edPresentation.getText().toString().trim().isEmpty()
+                       ){
 
-                    int anioExpInt = Integer.parseInt(aniosExperienciaSeleccionada.replace("Años", ""));
+                    int anioExpInt = Integer.parseInt(aniosExperienciaSeleccionada.replaceAll("[^0-9]", ""));
+                    Toast.makeText(requireContext(), String.valueOf(anioExpInt), Toast.LENGTH_SHORT).show();
+
                     asesor.setPresentacion(binding.edPresentation.getText().toString());
                     asesor.setEnseniazaPreferida(enseniazaPreferidaSeleccionada);
                     asesor.setAniosExperiencia(anioExpInt);
                     asesor.setCodigoColegiatura(binding.edcodColegiatura.getText().toString());
                     asesor.setCertigoogledrive(binding.edCertifications.getText().toString());
-                    NavHostFragment.findNavController(RAse_EducationFragment.this)
-                            .navigate(R.id.action_RAse_EducationFragment_to_loadingfragment);
+                    asesor.setEstado("Inactivo");
+                    asesor.setCalificacion(0);
 
+                    RAse_EducationFragmentDirections.ActionRAseEducationFragmentToDisponibilidadAsesorFragment action =
+                            RAse_EducationFragmentDirections.actionRAseEducationFragmentToDisponibilidadAsesorFragment(selectespecialidades, usuario, persona, asesor, disponibilidad);
+                    NavHostFragment.findNavController(RAse_EducationFragment.this).navigate(action);
                 }else {
                     Toast.makeText(requireContext(), "Por favor selecciona todos los campos.", Toast.LENGTH_SHORT).show();
                 }
@@ -96,18 +114,12 @@ public class RAse_EducationFragment extends Fragment {
         });
 
 
-        binding.edDisponibilidad.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                RAse_EducationFragmentDirections.ActionRAseEducationFragmentToDisponibilidadAsesorFragment action =
-                        RAse_EducationFragmentDirections.actionRAseEducationFragmentToDisponibilidadAsesorFragment(usuario, persona, asesor, disponibilidad);
-                NavHostFragment.findNavController(RAse_EducationFragment.this).navigate(action);
-            }
-        });
-
 
 
     }
+
+
+
 
     private void showBottomSheetDialogEspecialidad() {
         View bottomSheetView = LayoutInflater.from(requireContext()).inflate(R.layout.bottom_sheet_layout0_ase, null);

@@ -96,6 +96,9 @@
         tools:layout="@layout/fragment_especialidades"
         >
         <argument
+            android:name="ArgAsesor"
+            app:argType="com.example.helpme_app_v1.Model.Asesor" />
+        <argument
             android:name="ArgDisponibilidad"
             app:argType="com.example.helpme_app_v1.Model.Disponibilidad" />
         <argument
@@ -243,7 +246,9 @@
         android:name="com.example.helpme_app_v1.RAse_EducationFragment"
         android:label="fragment_r_ase__education"
         tools:layout="@layout/fragment_r_ase__education" >
-
+        <argument
+            android:name="ArgAsesor"
+            app:argType="com.example.helpme_app_v1.Model.Asesor" />
         <argument
             android:name="ArgDisponibilidad"
             app:argType="com.example.helpme_app_v1.Model.Disponibilidad" />
@@ -258,9 +263,7 @@
         <action
             android:id="@+id/action_RAse_EducationFragment_to_disponibilidadAsesorFragment"
             app:destination="@id/disponibilidadAsesorFragment" />
-        <action
-            android:id="@+id/action_RAse_EducationFragment_to_loadingfragment"
-            app:destination="@id/loadingfragment" />
+
         <action
             android:id="@+id/action_RAse_EducationFragment_to_especialidadesFragment"
             app:destination="@id/especialidadesFragment" />
@@ -282,15 +285,16 @@
         <argument
             android:name="ArgAsesor"
             app:argType="com.example.helpme_app_v1.Model.Asesor" />
-        <argument
-            android:name="ArgTokens"
-            app:argType="com.example.helpme_app_v1.Model.Tokens" />
+
     </fragment>
     <fragment
         android:id="@+id/disponibilidadAsesorFragment"
         android:name="com.example.helpme_app_v1.DisponibilidadAsesorFragment"
         android:label="fragment_disponibilidad_asesor"
         tools:layout="@layout/fragment_disponibilidad_asesor" >
+        <argument
+            android:name="selectedespecialides"
+            app:argType="string[]" />
         <argument
             android:name="ArgUsuario"
             app:argType="com.example.helpme_app_v1.Model.Usuario" />
@@ -301,12 +305,13 @@
         <argument
             android:name="ArgAsesor"
             app:argType="com.example.helpme_app_v1.Model.Asesor" />
-        <action
-            android:id="@+id/action_disponibilidadAsesorFragment_to_RAse_EducationFragment"
-            app:destination="@id/RAse_EducationFragment" />
+
         <argument
             android:name="ArgDisponibilidad"
             app:argType="com.example.helpme_app_v1.Model.Disponibilidad" />
+        <action
+            android:id="@+id/action_disponibilidadAsesorFragment_to_loadingfragment"
+            app:destination="@id/loadingfragment" />
     </fragment>
 
     <fragment
