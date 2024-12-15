@@ -2,5 +2,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.helpme_app_v1.MainActivity">
+    <item android:id="@+id/home"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Home"/>
 
+    <item android:id="@+id/compras"
+        android:icon="@drawable/icon_searchase"
+        android:title="Asesorias" />
+
+    <item android:id="@+id/bandeja"
+        android:icon="@drawable/baseline_chat_24"
+        android:title="chat" />
+
+    <item android:id="@+id/perfil"
+        android:icon="@drawable/baseline_notifications_24"
+        android:title="notificaciones" />
 </menu>
