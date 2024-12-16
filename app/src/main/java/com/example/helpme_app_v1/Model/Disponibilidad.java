@@ -6,8 +6,8 @@ import java.time.LocalTime;
 public class Disponibilidad implements Serializable {
 
     private String[] disponibilidad;
-    private LocalTime horaInicio;
-    private LocalTime horaFin;
+    private String horaInicio;
+    private String horaFin;
 
     public String[] getDisponibilidad() {
         return disponibilidad;
@@ -17,19 +17,19 @@ public class Disponibilidad implements Serializable {
         this.disponibilidad = disponibilidad;
     }
 
-    public LocalTime getHoraInicio() {
+    public String getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
+    public void setHoraInicio(String horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public LocalTime getHoraFin() {
+    public String getHoraFin() {
         return horaFin;
     }
 
-    public void setHoraFin(LocalTime horaFin) {
+    public void setHoraFin(String horaFin) {
         this.horaFin = horaFin;
     }
 }

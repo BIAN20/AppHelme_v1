@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imagenAsesoria"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ase3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tituloAsesoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gestión Deportiva"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/imagenAsesoria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/subtituloTokens"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100 Tokens"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tituloAsesoria"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp" />
+
+    <RadioGroup
+        android:id="@+id/opcionesModalidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/subtituloTokens"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp">
+
+        <RadioButton
+            android:id="@+id/opcionVirtual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Virtual" />
+
+        <RadioButton
+            android:id="@+id/opcionHibrido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Híbrido" />
+
+        <RadioButton
+            android:id="@+id/opcionPresencial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Presencial" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/inputFecha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Fecha de Asesoría"
+        android:drawableEnd="@android:drawable/ic_menu_my_calendar"
+        app:layout_constraintTop_toBottomOf="@id/opcionesModalidad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp" />
+
+    <TextView
+        android:id="@+id/textoTokensTotales"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TOTAL DE TOKENS A GASTAR\n1000 Tokens"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/inputFecha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/botonSolicitar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Solicitar"
+        app:layout_constraintTop_toBottomOf="@id/textoTokensTotales"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
