@@ -1,38 +1,79 @@
 package com.example.helpme_app_v1.Model;
 
-public class Asesoria {
-    private String nombreAsesoria;
-    private String tokens;
-    private String duracion;
+import java.io.Serializable;
+import java.util.Date;
 
-    public Asesoria(String nombreAsesoria, String tokens, String duracion) {
-        this.nombreAsesoria = nombreAsesoria;
-        this.tokens = tokens;
-        this.duracion = duracion;
+public class Asesoria implements Serializable {
+    private int estudiante;
+    private Date fecha;
+    private String horainicio;
+    private String horafin;
+    private int duracion;
+    private int asesoriaprecio;
+    private String url;
+    private String estado;
+
+    public int getEstudiante() {
+        return estudiante;
     }
 
-    // Getters y Setters
-    public String getNombreAsesoria() {
-        return nombreAsesoria;
+    public void setEstudiante(int estudiante) {
+        this.estudiante = estudiante;
     }
 
-    public void setNombreAsesoria(String nombreAsesoria) {
-        this.nombreAsesoria = nombreAsesoria;
+    public Date getFecha() {
+        return fecha;
     }
 
-    public String getTokens() {
-        return tokens;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
-    public void setTokens(String tokens) {
-        this.tokens = tokens;
+    public String getHorainicio() {
+        return horainicio;
     }
 
-    public String getDuracion() {
+    public void setHorainicio(String horainicio) {
+        this.horainicio = horainicio;
+    }
+
+    public int getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(String duracion) {
+    public void setDuracion(int duracion) {
         this.duracion = duracion;
+    }
+
+    public String getHorafin() {
+        return horafin;
+    }
+
+    public void setHorafin(String horafin) {
+        this.horafin = horafin;
+    }
+
+    public int getAsesoriaprecio() {
+        return asesoriaprecio;
+    }
+
+    public void setAsesoriaprecio(int asesoriaprecio) {
+        this.asesoriaprecio = asesoriaprecio;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }
