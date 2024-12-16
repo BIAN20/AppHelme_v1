@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class LoginFragment extends Fragment {
     private FragmentLoginBinding binding;
     private String token = "";  // Para almacenar el token de forma global
-
+    private String rol = "";
     public LoginFragment() {
         // Constructor vacío
     }
@@ -42,7 +43,7 @@ public class LoginFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        checkLoginStatus();
 
         binding.btnNewLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +86,8 @@ public class LoginFragment extends Fragment {
                     AuthResponse authResponse = response.body();
                     if (authResponse != null) {
                         token = authResponse.getToken();  // Guardar el token
-                        saveToken(token);  // Guardarlo en SharedPreferences
+                        rol = authResponse.getRol();
+                        saveTokenlocal(token, rol);  // Guardarlo en SharedPreferences
                         Toast.makeText(getContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
                         NavHostFragment.findNavController(LoginFragment.this)
                           .navigate(R.id.action_loginFragment_to_inicioFragment);
@@ -101,13 +103,30 @@ public class LoginFragment extends Fragment {
             }
         });
     }
-
-    private void saveToken(String token) {
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("AppPreferences", Context.MODE_PRIVATE);
+    private void saveTokenlocal(String token,String rol ) {
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("auth_token", token);
+        editor.putString("rol", rol);
+        editor.putString("user_token", token);  // Guardar el token
+        Log.d("SharedPreferences", "Token almacenado: " + token);
+        Log.d("SharedPreferences", "rol almacenado: " + rol);
         editor.apply();
     }
+
+    private void checkLoginStatus() {
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
+        String token = sharedPreferences.getString("user_token", null);  // Obtén el token guardado
+
+        if (token != null) {
+            // Si el token existe, redirige al InicioFragment
+            NavHostFragment.findNavController(LoginFragment.this)
+                    .navigate(R.id.action_loginFragment_to_inicioFragment);
+        } else {
+            // Si no hay token, permanece en LoginFragment
+            Toast.makeText(getContext(), "Por favor, inicie sesión", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     private Retrofit getRetrofit() {
         OkHttpClient client = new OkHttpClient.Builder()

@@ -3,7 +3,7 @@ package com.example.helpme_app_v1.Model;
 public class AuthResponse {
     private String token;
     private String email;
-
+    private String rol;
     // Getters y Setters
     public String getToken() {
         return token;
@@ -21,4 +21,11 @@ public class AuthResponse {
         this.email = email;
     }
 
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 }

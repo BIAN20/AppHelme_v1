@@ -17,6 +17,10 @@
             android:name="ArgNewUser"
             app:argType="string" />
     </fragment>
+
+
+
+
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.helpme_app_v1.SecondFragment"
@@ -53,6 +57,9 @@
         <action
             android:id="@+id/action_loginFragment_to_inicioFragment"
             app:destination="@id/inicioFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_inicioFragmentAsesor"
+            app:destination="@id/inicioAsesor" />
     </fragment>
 
 
@@ -136,6 +143,8 @@
             app:argType="string" />
     </fragment>
 
+
+
     <fragment
         android:id="@+id/bandejaFragment"
         android:name="com.example.helpme_app_v1.BandejaChatsFragment"
@@ -147,13 +156,40 @@
         app:destination="@id/chatFragment" />
 
     </fragment>
+
+
     <fragment
         android:id="@+id/HomeFragment"
         android:name="com.example.helpme_app_v1.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_busqueda_asesoria"
+            app:destination="@id/busqueda_asesoria"/>
+        <action
+            android:id="@+id/action_HomeFragment_to_detalle_busqueda"
+            app:destination="@id/detalle_busqueda" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/busqueda_asesoria"
+        android:name="com.example.helpme_app_v1.HomeFragment"
+        android:label="busqueda"
+        tools:layout="@layout/fragment_busqueda_asesoria" >
+        <action
+            android:id="@+id/action_busqueda_asesoria_to_detalle_busqueda"
+            app:destination="@id/detalle_busqueda" />
         </fragment>
 
+    <fragment
+        android:id="@+id/detalle_busqueda"
+        android:name="com.example.helpme_app_v1.HomeFragment"
+        android:label="busqueda"
+        tools:layout="@layout/detalle_busqueda_asesoria" >
+        <action
+            android:id="@+id/action_detalle_busqueda_to_comprasFragment"
+            app:destination="@id/comprasFragment" />
+    </fragment>
     <fragment
         android:id="@+id/perfilFragment"
         android:name="com.example.helpme_app_v1.PerfilFragment"
@@ -162,6 +198,12 @@
         <argument
             android:name="ArgUserName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_perfilFragment_to_comprasFragment"
+            app:destination="@id/comprasFragment" />
+        <action
+            android:id="@+id/action_perfilFragment_to_bandejaFragment"
+            app:destination="@id/bandejaFragment" />
     </fragment>
     <fragment
         android:id="@+id/chatFragment"
@@ -324,9 +366,16 @@
             app:destination="@id/loginFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/inicioAsesor"
+        android:name="com.example.helpme_app_v1.InicioFragmentAsesor"
+        android:label="inicioAsesor"
+        tools:layout="@layout/fragment_inicio_asesor" >
+        <action
+            android:id="@+id/inicioAsesor_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
 
-
-
+    </fragment>
 
 
 </navigation>

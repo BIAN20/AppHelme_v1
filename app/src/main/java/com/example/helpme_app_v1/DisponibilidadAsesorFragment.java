@@ -72,9 +72,10 @@ public class DisponibilidadAsesorFragment extends Fragment {
             String[] daysArray = selectedDays.toArray(new String[0]);
 
             // Recoger las horas de inicio y fin
-            LocalTime horaInicio = parseHoraToLocalTime(binding.horaInicioButton.getText().toString());
-            LocalTime horaFin = parseHoraToLocalTime(binding.horaFinButton.getText().toString());
-
+            String horaInicio = (binding.horaInicioButton.getText().toString());
+            String horaFin = (binding.horaFinButton.getText().toString());
+            horaInicio = horaInicio.replace(" AM", "").replace(" PM", "");
+            horaFin = horaFin.replace(" AM", "").replace(" PM", "");
             // Crear el objeto Disponibilidad
 
             disponibilidad.setDisponibilidad(daysArray);
