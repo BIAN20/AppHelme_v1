@@ -82,8 +82,15 @@ public class InicioFragmentAsesor extends Fragment {
             if(itemId == R.id.homeasesoria){
                 replaceFragment(new HomeAsesorFragment());
                 return true;
-            } else if( itemId == R.id.economia){
+
+            }
+            else if(itemId == R.id.estaasesorias){
+                replaceFragment(new EstaAsesoriaFragment() );
+                return  true;
+            }
+            else if( itemId == R.id.economia){
                 replaceFragment(new TokensFragment());
+                return  true;
             } else if (itemId == R.id.perfil) {
                 replaceFragment(new PerfilAsesorFragment());
                 return true;
