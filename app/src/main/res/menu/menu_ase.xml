@@ -9,7 +9,9 @@
     <item android:id="@+id/asesorias"
         android:icon="@drawable/icon_searchase"
         android:title="estado asesorias" />
-
+    <item android:id="@+id/economia"
+        android:icon="@drawable/baseline_attach_money_24"
+        android:title="economia" />
     <item android:id="@+id/perfil"
         android:icon="@drawable/baseline_person_24"
         android:title="perfil" />

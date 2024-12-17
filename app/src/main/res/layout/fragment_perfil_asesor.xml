@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F9F9">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PerfilAsesorFragment">
+
+    <!-- Imagen de perfil -->
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_profile_placeholder"
+        android:contentDescription="cargando"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Nombre de perfil -->
+    <TextView
+        android:id="@+id/profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cargando.."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/profile_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Botón de edición -->
+    <Button
+        android:id="@+id/edit_profile_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cerrar sesion"
+        android:backgroundTint="@color/black"
+        android:textColor="#ffff"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/profile_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Descripción -->
+    <TextView
+        android:id="@+id/profile_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cargando"
+        android:textSize="14sp"
+        android:width="700px"
+        android:textColor="#888888"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_profile_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Tokens y Soles -->
+    <LinearLayout
+        android:id="@+id/token_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/profile_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tokens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cargando"
+            android:background="@color/token_red"
+            android:padding="8dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/experiencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cargando"
+            android:background="@color/orange"
+            android:padding="8dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/soles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cargando"
+            android:background="@color/soles_green"
+            android:padding="8dp"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Botones de estado -->
+    <TextView
+        android:id="@+id/student_status_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HABILIDADES"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/token_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/university_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cargando"
+        android:backgroundTint="#3B82F6"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/student_status_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/major_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cargando"
+        android:backgroundTint="#3B82F6"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/university_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <TextView
+        android:id="@+id/advisory_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Especialidades"
+        android:textSize="16sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/major_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <!-- Mensajes y Economía -->
+    <LinearLayout
+        android:id="@+id/badges_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:scrollbars="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/advisory_title2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Los badges se agregarán dinámicamente desde el código -->
+    </LinearLayout>
+    <TextView
+        android:id="@+id/advisory_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Asesoria Precios"
+        android:textSize="16sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/badges_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontal_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/advisory_title"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/horizontalItemContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
