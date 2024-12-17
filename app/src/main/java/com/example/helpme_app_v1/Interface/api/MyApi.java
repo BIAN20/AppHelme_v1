@@ -1,9 +1,11 @@
 package com.example.helpme_app_v1.Interface.api;
 
 import com.example.helpme_app_v1.Especialidades.ResponseEspecialidades;
+import com.example.helpme_app_v1.Model.ActualizarEstadoRequest;
 import com.example.helpme_app_v1.Model.Asesores.AsesorPerfilResponse;
 import com.example.helpme_app_v1.Model.Asesoria;
 import com.example.helpme_app_v1.Model.AsesoriaPrecio;
+import com.example.helpme_app_v1.Model.Asesorias.ResponseAsesoriaFiltre;
 import com.example.helpme_app_v1.Model.Asesorias.ResponseAsesorias;
 import com.example.helpme_app_v1.Model.AsesoriasPrecios.ResponseAsesoriaPrecio;
 import com.example.helpme_app_v1.Model.AsesoriasPrecios.ResponseAsesoriaPreciov2;
@@ -22,6 +24,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface MyApi {
@@ -41,6 +44,10 @@ public interface MyApi {
         @GET("obtener_datos_asesor")
         Call<AsesorPerfilResponse> obtenerdata(@Query("usuario") int usuario);
 
+        @GET("obtener_asesorias")
+        Call<ResponseAsesoriaFiltre> obtenerdataxasesoria(@Query("id_usuario") int usuario);
+
+
         @PUT("actualizar_token")
         Call<ResponseToken> actualizarToken(@Body TokensRequest datos);
 
@@ -51,7 +58,11 @@ public interface MyApi {
         @POST("/crearasesorapp")
         Call<ResponseAsesor> guardarasesor(@Body AsesorRequest asesor);
 
-
+        @PUT("actualizar_estado_asesoria/{id_asesoria}")
+        Call<ResponseAsesoriaFiltre> actualizarEstadoAsesoria(
+                @Path("id_asesoria") int idAsesoria,
+                @Body ActualizarEstadoRequest request
+        );
 
         @POST("/crearasesoria_auth")
         Call<ResponseAsesorias> guardarAsesoria(@Body Asesoria asesoria);

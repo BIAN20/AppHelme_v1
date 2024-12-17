@@ -369,5 +369,15 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/fEstadoAsesori"
+        android:name="com.example.helpme_app_v1.InicioFragmentAsesor"
+        android:label="estado Asesoria"
+        tools:layout="@layout/fragment_esta_asesoria">
+        <action
+            android:id="@+id/action_fEstadoAsesori_to_inicioAsesor"
+            app:destination="@id/inicioAsesor" />
+    </fragment>
+
 
 </navigation>

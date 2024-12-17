@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Asesoria implements Serializable {
     private int estudiante;
-    private Date fecha;
+    private String fecha;
     private String horainicio;
     private String horafinal;
     private int duracion;
@@ -21,11 +21,11 @@ public class Asesoria implements Serializable {
         this.estudiante = estudiante;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

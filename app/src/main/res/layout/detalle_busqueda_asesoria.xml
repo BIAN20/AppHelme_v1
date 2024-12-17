@@ -59,20 +59,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintWidth_percent="0.9" />
-        <EditText
-            android:id="@+id/edDurationSesion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:width="300dp"
-            android:background="@drawable/editborderblack"
-            android:clickable="true"
-            android:focusable="false"
-            android:hint="@string/HoursSesions"
-            android:padding="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edTokens"/>
+
         <TextView
             android:id="@+id/titleHorainicio"
             android:layout_width="wrap_content"
@@ -99,19 +86,7 @@
             app:layout_constraintTop_toBottomOf="@+id/titleHora"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
-        <EditText
-            android:id="@+id/edImageUrl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:width="300dp"
-            android:background="@drawable/editborderblack"
-            android:hint="url"
-            android:padding="12dp"
-            android:inputType="textUri"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edDurationSesion" />
+
 
         <Button
             android:id="@+id/btnContinue"

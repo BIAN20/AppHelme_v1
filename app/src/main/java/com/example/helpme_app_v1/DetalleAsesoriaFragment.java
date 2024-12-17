@@ -57,7 +57,6 @@ public class DetalleAsesoriaFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DetalleBusquedaAsesoriaBinding.inflate(inflater, container, false);
-        binding.edDurationSesion.setOnClickListener(v -> showDurationForSesion());
 
         // Recuperar datos del bundle
 
@@ -95,9 +94,8 @@ public class DetalleAsesoriaFragment extends Fragment {
 
             String horaInicio = horaInicio2.replace(" AM", "").replace(" PM", ""); // Eliminar AM/PM
 
-            String horas = binding.edDurationSesion.getText().toString();  // Ejemplo: "2 horas"
-            horas = horas.replace(" horas", "");
-            int horasASumar = Integer.parseInt(horas);
+
+            int horasASumar = ase.getDuracion();
 
 // Extraer hora y minutos
             String[] partesHora = horaInicio.split(":"); // Divide "2:00" en ["2", "00"]
@@ -130,6 +128,9 @@ public class DetalleAsesoriaFragment extends Fragment {
 
 
             Date fecha = obtenerFechaNacimiento(binding.etFechaNacimiento);
+            if (fecha == null) return; // Validación de la fecha
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            String fechaFormateada = sdf.format(fecha);
 
             // Validar si la hora de inicio está vacía
             if (horaInicio.isEmpty()) {
@@ -141,12 +142,12 @@ public class DetalleAsesoriaFragment extends Fragment {
             Asesoria aseso = new Asesoria();
             aseso.setAsesoriaprecio(ase.getIdAsesoriaPrecio());
             aseso.setEstado("Pendiente");
-            aseso.setDuracion(horasASumar);
+            aseso.setDuracion(2);
             aseso.setHorafinal(horaFinal);
             aseso.setHorainicio(horaInicio2);
-            aseso.setFecha(fecha);
+            aseso.setFecha(fechaFormateada);
             aseso.setEstudiante(user);
-            aseso.setUrl(binding.edImageUrl.getText().toString());
+            aseso.setUrl("https://media.gettyimages.com/id/1480323436/es/foto/pareja-hablando-con-un-asesor-financiero-sobre-una-inversi%C3%B3n.jpg?s=612x612&w=gi&k=20&c=mrtTCG6JZ8qwazmWUNKeJgwMsDjb2_6HhWqor6AomLM=");
             registrar(aseso);
         });
 
@@ -241,22 +242,6 @@ public class DetalleAsesoriaFragment extends Fragment {
         bottomSheetDialogHoraInicio.show();
     }
 
-    private void showDurationForSesion() {
-        String[] hoursOptions = {"1 horas", "2 horas", "3 horas"};
-
-        new AlertDialog.Builder(requireContext())
-                .setTitle("Selecciona duración")
-                .setItems(hoursOptions, (dialog, which) -> {
-                    binding.edDurationSesion.setText(hoursOptions[which]);
-
-                    String horas = hoursOptions[which].replace(" horas", "");
-                    int horasConverter = Integer.parseInt(horas);
-                    AsesoriaPrecio asesoriaPrecio = new AsesoriaPrecio();
-                    asesoriaPrecio.setDuracion(horasConverter);
-                })
-                .setNegativeButton("Cancelar", null)
-                .show();
-    }
 
     private void mostrarDatePicker() {
         final Calendar calendar = Calendar.getInstance();

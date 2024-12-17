@@ -6,9 +6,9 @@
         android:icon="@drawable/baseline_home_24"
         android:title="Tarifa Asesoria"/>
 
-    <item android:id="@+id/asesorias"
+    <item android:id="@+id/estaasesorias"
         android:icon="@drawable/icon_searchase"
-        android:title="estado asesorias" />
+        android:title="Estado Asesoria" />
     <item android:id="@+id/economia"
         android:icon="@drawable/baseline_attach_money_24"
         android:title="economia" />

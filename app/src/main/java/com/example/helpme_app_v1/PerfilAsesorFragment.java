@@ -230,7 +230,7 @@ public class PerfilAsesorFragment extends Fragment {
                                     TextView badge = new TextView(getContext()); // Usar getContext() para el contexto
                                     badge.setText(especialidad);
                                     badge.setBackgroundResource(R.color.white); // Asume que tienes un fondo para los badges
-                                    badge.setTextColor(Color.WHITE);
+                                    badge.setTextColor(Color.GRAY);
                                     badge.setPadding(16, 8, 16, 8);
                                     badge.setLayoutParams(new LinearLayout.LayoutParams(
                                             LinearLayout.LayoutParams.WRAP_CONTENT,
