@@ -56,7 +56,10 @@ public class InicioFragment extends Fragment {
             if(itemId == R.id.home){
                 replaceFragment(new HomeFragment());
                 return true;
-            } else if (itemId == R.id.perfil) {
+            } else if (itemId == R.id.economia) {
+                replaceFragment(new TokensEstudianteFragment());
+                return true;
+            }else if (itemId == R.id.perfil) {
                 replaceFragment(new PerfilEstudianteFragment());
                 return true;
             }

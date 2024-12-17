@@ -3,7 +3,6 @@ package com.example.helpme_app_v1.Interface.api;
 import com.example.helpme_app_v1.Especialidades.ResponseEspecialidades;
 
 import com.example.helpme_app_v1.Model.ActualizarEstadoRequest;
-import com.example.helpme_app_v1.Model.Asesores.AsesorPerfilResponse;
 
 import com.example.helpme_app_v1.Model.Asesoria;
 import com.example.helpme_app_v1.Model.AsesoriaPrecio;
@@ -76,6 +75,4 @@ public interface MyApi {
 
 
 
-        @GET("perfil")
-        Call<AsesorPerfilResponse> obtenerPerfilAsesor();
 }

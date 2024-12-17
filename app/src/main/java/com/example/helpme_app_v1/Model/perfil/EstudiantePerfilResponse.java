@@ -1,5 +1,7 @@
 package com.example.helpme_app_v1.Model.Estudiantes;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class EstudiantePerfilResponse {
@@ -50,19 +52,39 @@ public class EstudiantePerfilResponse {
         private String dni;
         private String carrera;
         private String universidad;
-        private List<String> interesesAcademicos;
 
-        public EstudiantePerfilData(String nombre, String apellidos, String dni, String carrera,
-                                    String universidad, List<String> interesesAcademicos) {
+        private String saldo;
+        private int tokens;
+        @SerializedName("intereses_academicos")
+        private List<String> interesesAcademicos;
+        public EstudiantePerfilData(String nombre, String apellidos, String dni, String carrera, String universidad, List<String> interesesAcademicos, String saldo, int tokens) {
             this.nombre = nombre;
             this.apellidos = apellidos;
             this.dni = dni;
             this.carrera = carrera;
             this.universidad = universidad;
             this.interesesAcademicos = interesesAcademicos;
+            this.saldo = saldo;
+            this.tokens = tokens;
         }
 
         public EstudiantePerfilData() {
+        }
+
+        public String getSaldo() {
+            return saldo;
+        }
+
+        public void setSaldo(String saldo) {
+            this.saldo = saldo;
+        }
+
+        public int getTokens() {
+            return tokens;
+        }
+
+        public void setTokens(int tokens) {
+            this.tokens = tokens;
         }
 
         // Getters y Setters para los campos
