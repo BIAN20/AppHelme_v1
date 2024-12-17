@@ -1,18 +1,19 @@
 package com.example.helpme_app_v1.Interface.api;
 
 import com.example.helpme_app_v1.Especialidades.ResponseEspecialidades;
-import com.example.helpme_app_v1.Model.Asesores.AsesorPerfilResponse;
 import com.example.helpme_app_v1.Model.Asesoria;
 import com.example.helpme_app_v1.Model.AsesoriaPrecio;
 import com.example.helpme_app_v1.Model.Asesorias.ResponseAsesorias;
 import com.example.helpme_app_v1.Model.AsesoriasPrecios.ResponseAsesoriaPrecio;
 import com.example.helpme_app_v1.Model.AsesoriasPrecios.ResponseAsesoriaPreciov2;
+import com.example.helpme_app_v1.Model.Estudiantes.EstudiantePerfilResponse;
 import com.example.helpme_app_v1.Model.Estudiantes.EstudianteRequest;
 import com.example.helpme_app_v1.Model.Estudiantes.EstudianteResponse;
 import com.example.helpme_app_v1.Model.InteresesAcademic.ResponseInteresesAcademic;
 
 import com.example.helpme_app_v1.Model.Asesores.ResponseAsesor;
 import com.example.helpme_app_v1.Model.Asesores.AsesorRequest;
+import com.example.helpme_app_v1.Model.perfil.AsesorPerfilResponse;
 import com.example.helpme_app_v1.Model.tokens.ResponseToken;
 import com.example.helpme_app_v1.Model.tokens.TokensRequest;
 
@@ -40,6 +41,9 @@ public interface MyApi {
 
         @GET("obtener_datos_asesor")
         Call<AsesorPerfilResponse> obtenerdata(@Query("usuario") int usuario);
+        @GET("obtener_datos_estudiante")
+        Call<EstudiantePerfilResponse> obtenerPerfilEstudiante(@Query("usuario") int usuario);
+
 
         @PUT("actualizar_token")
         Call<ResponseToken> actualizarToken(@Body TokensRequest datos);
@@ -55,4 +59,9 @@ public interface MyApi {
 
         @POST("/crearasesoria_auth")
         Call<ResponseAsesorias> guardarAsesoria(@Body Asesoria asesoria);
+
+
+
+        @GET("perfil")
+        Call<AsesorPerfilResponse> obtenerPerfilAsesor();
 }

@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,25 +11,18 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.helpme_app_v1.Interface.api.MyApi;
-import com.example.helpme_app_v1.Model.Asesores.AsesorPerfilResponse;
+import com.example.helpme_app_v1.Model.perfil.AsesorPerfilResponse;
 import com.example.helpme_app_v1.Model.tokens.ResponseToken;
 import com.example.helpme_app_v1.Model.tokens.TokensRequest;
-import com.example.helpme_app_v1.databinding.FragmentPerfilAsesorBinding;
 import com.example.helpme_app_v1.databinding.FragmentTokensBinding;
 
 import java.io.IOException;
-import java.util.List;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

@@ -125,16 +125,11 @@
         <action
             android:id="@+id/action_inicioFragment_to_detalle_busqueda"
             app:destination="@id/detalle_busqueda" />
-        <action
-            android:id="@+id/action_inicioFragment_to_perfilFragment"
-            app:destination="@id/perfilFragment" />
-        <action
-            android:id="@+id/action_inicioFragment_to_comprasFragment"
-            app:destination="@id/comprasFragment" />
+
 
         <action
-            android:id="@+id/action_inicioFragment_to_bandejaFragment"
-            app:destination="@id/bandejaFragment" />
+            android:id="@+id/action_inicioEstudiante_to_loginFragment"
+            app:destination="@id/loginFragment" />
 
         <argument
             android:name="ArgUserName"
@@ -182,21 +177,7 @@
             android:id="@+id/action_detalle_busqueda_to_inicioFragment"
             app:destination="@id/inicioFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/perfilFragment"
-        android:name="com.example.helpme_app_v1.PerfilFragment"
-        android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil">
-        <argument
-            android:name="ArgUserName"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_perfilFragment_to_comprasFragment"
-            app:destination="@id/comprasFragment" />
-        <action
-            android:id="@+id/action_perfilFragment_to_bandejaFragment"
-            app:destination="@id/bandejaFragment" />
-    </fragment>
+
     <fragment
         android:id="@+id/chatFragment"
         android:name="com.example.helpme_app_v1.ChatFragment"
@@ -356,9 +337,6 @@
         android:name="com.example.helpme_app_v1.InicioFragmentAsesor"
         android:label="inicioAsesor"
         tools:layout="@layout/fragment_inicio_asesor" >
-        <action
-            android:id="@+id/inicioAsesor_to_perfilFragment"
-            app:destination="@id/perfilFragment" />
 
         <action
             android:id="@+id/action_inicioAsesor_to_RAse_TokensFragment"
