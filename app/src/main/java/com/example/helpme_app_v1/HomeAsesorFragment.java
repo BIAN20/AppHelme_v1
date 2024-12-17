@@ -62,9 +62,10 @@ public class HomeAsesorFragment extends Fragment {
     private void fetchData() {
         Retrofit retrofit = getRetrofit();
         MyApi service = retrofit.create(MyApi.class);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
+        int user = sharedPreferences.getInt("user", 0);
 
-        int userId = 35; // Reemplázalo por el ID dinámico
-        service.listarAsesoriaPrecio(userId).enqueue(new Callback<ResponseAsesoriaPrecio>() {
+        service.listarAsesoriaPrecio(user).enqueue(new Callback<ResponseAsesoriaPrecio>() {
             @Override
             public void onResponse(Call<ResponseAsesoriaPrecio> call, Response<ResponseAsesoriaPrecio> response) {
                 if (response.isSuccessful() && response.body() != null) {
@@ -72,8 +73,8 @@ public class HomeAsesorFragment extends Fragment {
                     for (AsesoriaPrecio asesoria : asesoriaPrecios) {
                         itemList.add(new Item(
                                 asesoria.getUrl(),
-                                "Duración: " + asesoria.getDuracion() + " Horas",
-                                asesoria.getTokens() + " Tokens"
+                                "Titulo: " + asesoria.getTipoasesoria(),
+                                asesoria.getTokens() + " Tokens - " + asesoria.getDuracion() + "Horas"
                         ));
                     }
                     adapter.notifyDataSetChanged();

@@ -1,6 +1,7 @@
 package com.example.helpme_app_v1.Interface.api;
 
 import com.example.helpme_app_v1.Especialidades.ResponseEspecialidades;
+import com.example.helpme_app_v1.Model.Asesores.AsesorPerfilResponse;
 import com.example.helpme_app_v1.Model.AsesoriaPrecio;
 import com.example.helpme_app_v1.Model.AsesoriasPrecios.ResponseAsesoriaPrecio;
 import com.example.helpme_app_v1.Model.AsesoriasPrecios.ResponseAsesoriaPreciov2;
@@ -10,12 +11,15 @@ import com.example.helpme_app_v1.Model.InteresesAcademic.ResponseInteresesAcadem
 
 import com.example.helpme_app_v1.Model.Asesores.ResponseAsesor;
 import com.example.helpme_app_v1.Model.Asesores.AsesorRequest;
+import com.example.helpme_app_v1.Model.tokens.ResponseToken;
+import com.example.helpme_app_v1.Model.tokens.TokensRequest;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 public interface MyApi {
@@ -29,6 +33,12 @@ public interface MyApi {
         Call<ResponseBody> verificardni(@Body Object datos);
         @GET("listar_asesoria_precio")
         Call<ResponseAsesoriaPrecio> listarAsesoriaPrecio(@Query("usuario") int usuario);
+
+        @GET("obtener_datos_asesor")
+        Call<AsesorPerfilResponse> obtenerdata(@Query("usuario") int usuario);
+
+        @PUT("actualizar_token")
+        Call<ResponseToken> actualizarToken(@Body TokensRequest datos);
 
         @POST("/crearestudiante")
         Call<EstudianteResponse> guardarEstudiante(@Body EstudianteRequest estudianteRequest);
