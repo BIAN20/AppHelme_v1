@@ -1,20 +1,20 @@
 package com.example.helpme_app_v1.Model.AsesoriasPrecios;
 
 import com.example.helpme_app_v1.Model.AsesoriaPrecio;
+
 import java.util.List;
 
-public class ResponseAsesoriaPrecio {
+public class ResponseAsesoriaPreciov2 {
 
-    private List<AsesoriaPrecio> data;
+    private Object data;
     private String message;
     private int status;
 
-    // Getters and Setters
-    public List<AsesoriaPrecio> getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(List<AsesoriaPrecio> data) {
+    public void setData(Object data) {
         this.data = data;
     }
 

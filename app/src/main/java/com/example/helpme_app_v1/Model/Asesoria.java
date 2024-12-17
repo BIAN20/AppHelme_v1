@@ -10,7 +10,7 @@ public class Asesoria implements Serializable {
     private String horafin;
     private int duracion;
     private int asesoriaprecio;
-    private String url;
+    private String url; //fotoo
     private String estado;
 
     public int getEstudiante() {

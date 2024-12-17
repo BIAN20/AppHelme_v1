@@ -2,9 +2,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.helpme_app_v1.MainActivity">
-    <item android:id="@+id/home"
+    <item android:id="@+id/homeasesoria"
         android:icon="@drawable/baseline_home_24"
-        android:title="nueva asesoria"/>
+        android:title="Tarifa Asesoria"/>
 
     <item android:id="@+id/asesorias"
         android:icon="@drawable/icon_searchase"

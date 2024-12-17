@@ -75,6 +75,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edTokens"/>
+    <EditText
+        android:id="@+id/edImageUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:width="300dp"
+        android:background="@drawable/editborderblack"
+        android:hint="url"
+        android:padding="12dp"
+        android:inputType="textUri"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edDurationSesion" />
 
     <Button
         android:id="@+id/btnContinue"
@@ -89,6 +102,6 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edDurationSesion" />
+        app:layout_constraintTop_toBottomOf="@id/edImageUrl" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

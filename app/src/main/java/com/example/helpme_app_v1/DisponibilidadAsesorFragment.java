@@ -101,7 +101,7 @@ public class DisponibilidadAsesorFragment extends Fragment {
     private void registrarusuario(AsesorRequest asesorRequest) {
         Retrofit retrofit = getRetrofit();
         MyApi api = retrofit.create(MyApi.class);
-        Log.e("API_CALL", "xxxxxxxo: " +asesorRequest);
+
         Call<ResponseAsesor> call = api.guardarasesor(asesorRequest);
         call.enqueue(new Callback<ResponseAsesor>() {
             @Override

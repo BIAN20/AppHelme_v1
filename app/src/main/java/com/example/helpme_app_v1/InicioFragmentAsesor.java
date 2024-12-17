@@ -1,5 +1,7 @@
 package com.example.helpme_app_v1;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +14,11 @@ import android.view.ViewGroup;
 
 import com.example.helpme_app_v1.databinding.FragmentInicioAsesorBinding;
 import com.example.helpme_app_v1.databinding.FragmentInicioBinding;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,14 +73,14 @@ public class InicioFragmentAsesor extends Fragment {
         //return inflater.inflate(R.layout.fragment_inicio_asesor, container, false);
 
         if (savedInstanceState == null) {
-            replaceFragment(new HomeFragment());
+            replaceFragment(new HomeAsesorFragment());
             // binding.bottomNavigationView.setSelectedItemId(R.id.home);
         }
 
         binding.bottomNavigationView.setOnItemSelectedListener( item -> {
             int itemId = item.getItemId();
-            if(itemId == R.id.home){
-                replaceFragment(new HomeFragment());
+            if(itemId == R.id.homeasesoria){
+                replaceFragment(new HomeAsesorFragment());
                 return true;
             } else if (itemId == R.id.compras){
                 replaceFragment(new ComprasFragment());
@@ -92,6 +99,8 @@ public class InicioFragmentAsesor extends Fragment {
 
 
     }
+
+
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

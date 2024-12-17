@@ -4,6 +4,16 @@ public class AuthResponse {
     private String token;
     private String email;
     private String rol;
+    private int user;
+
+    public int getUser() {
+        return user;
+    }
+
+    public void setUser(int user) {
+        this.user = user;
+    }
+
     // Getters y Setters
     public String getToken() {
         return token;

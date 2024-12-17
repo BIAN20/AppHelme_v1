@@ -29,6 +29,7 @@ public class LoginFragment extends Fragment {
     private FragmentLoginBinding binding;
     private String token = "";  // Para almacenar el token de forma global
     private String rol = "";
+    private int user = 0;
     public LoginFragment() {
         // Constructor vacío
     }
@@ -43,7 +44,6 @@ public class LoginFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        checkLoginStatus();
 
         binding.btnNewLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,10 +87,20 @@ public class LoginFragment extends Fragment {
                     if (authResponse != null) {
                         token = authResponse.getToken();  // Guardar el token
                         rol = authResponse.getRol();
-                        saveTokenlocal(token, rol);  // Guardarlo en SharedPreferences
-                        Toast.makeText(getContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
-                        NavHostFragment.findNavController(LoginFragment.this)
-                          .navigate(R.id.action_loginFragment_to_inicioFragment);
+                        user = authResponse.getUser();
+                        saveTokenlocal(token, rol, user);  // Guardarlo en SharedPreferences
+
+                        if (rol.toString().equals("Asesor")) {
+                            Toast.makeText(getContext(), "Bienvenido asesor", Toast.LENGTH_SHORT).show();
+                            NavHostFragment.findNavController(LoginFragment.this)
+                                    .navigate(R.id.action_loginFragment_to_inicioFragmentAsesor);
+                        } else {
+                            Toast.makeText(getContext(), "Bienvenido estudiante", Toast.LENGTH_SHORT).show();
+                            NavHostFragment.findNavController(LoginFragment.this)
+                                    .navigate(R.id.action_loginFragment_to_inicioFragment);
+                        }
+
+
                     }
                 } else {
                     Toast.makeText(getContext(), "Credenciales Erroneas", Toast.LENGTH_SHORT).show();
@@ -103,10 +113,11 @@ public class LoginFragment extends Fragment {
             }
         });
     }
-    private void saveTokenlocal(String token,String rol ) {
+    private void saveTokenlocal(String token,String rol, int user ) {
         SharedPreferences sharedPreferences = getContext().getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("rol", rol);
+        editor.putInt("user", user);
         editor.putString("user_token", token);  // Guardar el token
         Log.d("SharedPreferences", "Token almacenado: " + token);
         Log.d("SharedPreferences", "rol almacenado: " + rol);

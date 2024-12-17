@@ -3,10 +3,29 @@ package com.example.helpme_app_v1.Model;
 import java.io.Serializable;
 
 public class AsesoriaPrecio implements Serializable {
+    private int idAsesoriaPrecio;
     private String tipoasesoria;
+    private String url;
     private int asesor;
     private int tokens;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     private int duracion;
+
+    public int getIdAsesoriaPrecio() {
+        return idAsesoriaPrecio;
+    }
+
+    public void setIdAsesoriaPrecio(int idAsesoriaPrecio) {
+        this.idAsesoriaPrecio = idAsesoriaPrecio;
+    }
 
     public String getTipoasesoria() {
         return tipoasesoria;
