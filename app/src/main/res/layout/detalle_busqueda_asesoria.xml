@@ -40,6 +40,25 @@
             android:textSize="16sp"
             android:textColor="#666"
             android:layout_gravity="center_horizontal"/>
+
+        <EditText
+            android:id="@+id/etFechaNacimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Fecha cita"
+            android:padding="10dp"
+            android:width="345dp"
+            android:inputType="date"
+            android:textColor="@color/orange"
+            android:textColorHint="@color/gray"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/editborderblack"
+            android:drawableEnd="@drawable/baseline_date_range_24"
+            android:focusable="false"
+            app:layout_constraintTop_toBottomOf="@id/etPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.9" />
         <EditText
             android:id="@+id/edDurationSesion"
             android:layout_width="wrap_content"
@@ -80,22 +99,19 @@
             app:layout_constraintTop_toBottomOf="@+id/titleHora"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
-        <Button
-            android:id="@+id/edtipoEnsenianza"
-            android:layout_width="350dp"
+        <EditText
+            android:id="@+id/edImageUrl"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:width="300dp"
             android:background="@drawable/editborderblack"
-            android:text="@string/typeTeaching"
-            android:textColor="@color/black"
+            android:hint="url"
             android:padding="12dp"
-            android:focusable="false"
-            android:clickable="true"
-            app:layout_constraintTop_toBottomOf="@id/edcodColegiatura"
+            android:inputType="textUri"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
+            app:layout_constraintTop_toBottomOf="@id/edDurationSesion" />
 
         <Button
             android:id="@+id/btnContinue"

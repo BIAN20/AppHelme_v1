@@ -62,12 +62,12 @@ public class HomeFragment extends Fragment {
 
     private void fetchData() {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
-        int userId = 35;
+
 
         Retrofit retrofit = getRetrofit();
         MyApi service = retrofit.create(MyApi.class);
 
-        service.listarAsesoriaPrecio(userId).enqueue(new Callback<ResponseAsesoriaPrecio>() {
+        service.listarAsesoriaPreciov2().enqueue(new Callback<ResponseAsesoriaPrecio>() {
             @Override
             public void onResponse(Call<ResponseAsesoriaPrecio> call, Response<ResponseAsesoriaPrecio> response) {
                 if (response.isSuccessful() && response.body() != null) {
@@ -75,8 +75,9 @@ public class HomeFragment extends Fragment {
                     for (AsesoriaPrecio asesoria : asesoriaPrecios) {
                         itemList.add(new Item(
                                 asesoria.getUrl(),
-                                "Duración: " + asesoria.getDuracion() + " Horas",
-                                asesoria.getTokens() + " Tokens"
+                                "Titulo: " + asesoria.getTipoasesoria(),
+                                asesoria.getTokens() + " Tokens" + " - "+"Duración: " + asesoria.getDuracion() + " Horas",
+                                asesoria
                         ));
                     }
                     adapter.notifyDataSetChanged();
@@ -122,11 +123,20 @@ public class HomeFragment extends Fragment {
         private String imageUrl;
         private String title;
         private String subtitle;
-
-        public Item(String imageUrl, String title, String subtitle) {
+        private AsesoriaPrecio asesor;
+        public Item(String imageUrl, String title, String subtitle, AsesoriaPrecio asesor) {
             this.imageUrl = imageUrl;
             this.title = title;
             this.subtitle = subtitle;
+            this.asesor = asesor;
+        }
+
+        public AsesoriaPrecio getAsesor() {
+            return asesor;
+        }
+
+        public void setAsesor(AsesoriaPrecio asesor) {
+            this.asesor = asesor;
         }
 
         public String getImageUrl() {
@@ -170,13 +180,17 @@ public class HomeFragment extends Fragment {
             holder.itemSubtitle.setText(item.getSubtitle());
 
             holder.itemView.setOnClickListener(v -> {
-                Bundle bundle = new Bundle();
-                bundle.putString("imageUrl", item.getImageUrl());
-                bundle.putString("title", item.getTitle());
-                bundle.putString("subtitle", item.getSubtitle());
+                // Usar SafeArgs para pasar datos
+                InicioFragmentDirections.ActionInicioFragmentToDetalleBusqueda action =
+                        InicioFragmentDirections.actionInicioFragmentToDetalleBusqueda(
+                                item.getImageUrl(),
+                                item.getTitle(),
+                                item.getSubtitle(),
+                                item.getAsesor()
+                        );
 
-                NavHostFragment.findNavController(parentFragment)
-                        .navigate(R.id.action_inicioFragment_to_detalle_busqueda, bundle);
+                // Navegar usando SafeArgs
+                NavHostFragment.findNavController(parentFragment).navigate(action);
             });
 
         }
