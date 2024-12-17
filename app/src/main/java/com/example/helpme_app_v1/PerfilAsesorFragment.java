@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.util.Log;
 import android.view.Gravity;
@@ -24,13 +23,10 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.helpme_app_v1.Interface.api.MyApi;
-import com.example.helpme_app_v1.Model.Asesores.AsesorPerfilResponse;
 import com.example.helpme_app_v1.Model.AsesoriaPrecio;
 import com.example.helpme_app_v1.Model.AsesoriasPrecios.ResponseAsesoriaPrecio;
-import com.example.helpme_app_v1.Model.AsesoriasPrecios.ResponseAsesoriaPreciov2;
-import com.example.helpme_app_v1.databinding.FragmentHomeAsesorBinding;
+import com.example.helpme_app_v1.Model.perfil.AsesorPerfilResponse;
 import com.example.helpme_app_v1.databinding.FragmentPerfilAsesorBinding;
-import com.example.helpme_app_v1.databinding.FragmentRAseTokensBinding;
 
 import java.io.IOException;
 import java.util.List;
@@ -62,14 +58,6 @@ public class PerfilAsesorFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PerfilAsesorFragment.
-     */
     // TODO: Rename and change types and number of parameters
     public static PerfilAsesorFragment newInstance(String param1, String param2) {
         PerfilAsesorFragment fragment = new PerfilAsesorFragment();
