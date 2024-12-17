@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/white"
     android:padding="8dp"
-    android:layout_margin="8dp">
-
+    android:clickable="true"
+    android:focusable="true">
     <ImageView
         android:id="@+id/itemImage"
         android:layout_width="match_parent"
@@ -31,5 +31,5 @@
         android:text="100 Tokens · 2 Horas"
         android:textSize="14sp"
         android:textColor="#7D7D7D"
-        android:layout_marginTop="2dp" />
-</LinearLayout>
+        android:layout_marginTop="2dp"/>
+    </LinearLayout>

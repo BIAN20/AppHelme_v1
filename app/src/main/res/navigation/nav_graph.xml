@@ -123,6 +123,9 @@
         android:label="Home"
         tools:layout="@layout/fragment_inicio" >
         <action
+            android:id="@+id/action_inicioFragment_to_detalle_busqueda"
+            app:destination="@id/detalle_busqueda" />
+        <action
             android:id="@+id/action_inicioFragment_to_perfilFragment"
             app:destination="@id/perfilFragment" />
         <action
@@ -130,15 +133,13 @@
             app:destination="@id/comprasFragment" />
 
         <action
-            android:id="@+id/action_inicioFragment_to_HomeFragment"
-            app:destination="@id/HomeFragment"/>
-        <action
             android:id="@+id/action_inicioFragment_to_bandejaFragment"
             app:destination="@id/bandejaFragment" />
 
         <argument
             android:name="ArgUserName"
             app:argType="string" />
+
 
     </fragment>
 
@@ -158,19 +159,6 @@
 
 
     <fragment
-        android:id="@+id/HomeFragment"
-        android:name="com.example.helpme_app_v1.HomeFragment"
-        android:label="Home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_busqueda_asesoria"
-            app:destination="@id/busqueda_asesoria"/>
-        <action
-            android:id="@+id/action_HomeFragment_to_detalle_busqueda"
-            app:destination="@id/detalle_busqueda" />
-
-    </fragment>
-    <fragment
         android:id="@+id/busqueda_asesoria"
         android:name="com.example.helpme_app_v1.HomeFragment"
         android:label="busqueda"
@@ -182,8 +170,8 @@
 
     <fragment
         android:id="@+id/detalle_busqueda"
-        android:name="com.example.helpme_app_v1.HomeFragment"
-        android:label="busqueda"
+        android:name="com.example.helpme_app_v1.DetalleAsesoriaFragment"
+        android:label="DetalleBusqueda"
         tools:layout="@layout/detalle_busqueda_asesoria" >
         <action
             android:id="@+id/action_detalle_busqueda_to_comprasFragment"
