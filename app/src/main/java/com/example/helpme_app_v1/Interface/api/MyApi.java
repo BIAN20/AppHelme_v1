@@ -2,7 +2,9 @@ package com.example.helpme_app_v1.Interface.api;
 
 import com.example.helpme_app_v1.Especialidades.ResponseEspecialidades;
 import com.example.helpme_app_v1.Model.Asesores.AsesorPerfilResponse;
+import com.example.helpme_app_v1.Model.Asesoria;
 import com.example.helpme_app_v1.Model.AsesoriaPrecio;
+import com.example.helpme_app_v1.Model.Asesorias.ResponseAsesorias;
 import com.example.helpme_app_v1.Model.AsesoriasPrecios.ResponseAsesoriaPrecio;
 import com.example.helpme_app_v1.Model.AsesoriasPrecios.ResponseAsesoriaPreciov2;
 import com.example.helpme_app_v1.Model.Estudiantes.EstudianteRequest;
@@ -33,6 +35,8 @@ public interface MyApi {
         Call<ResponseBody> verificardni(@Body Object datos);
         @GET("listar_asesoria_precio")
         Call<ResponseAsesoriaPrecio> listarAsesoriaPrecio(@Query("usuario") int usuario);
+        @GET("listar_asesoria_precio_get")
+        Call<ResponseAsesoriaPrecio> listarAsesoriaPreciov2();
 
         @GET("obtener_datos_asesor")
         Call<AsesorPerfilResponse> obtenerdata(@Query("usuario") int usuario);
@@ -46,4 +50,9 @@ public interface MyApi {
         Call<ResponseAsesoriaPreciov2> guardarprecioasesoria(@Body AsesoriaPrecio asesoriaprecio);
         @POST("/crearasesorapp")
         Call<ResponseAsesor> guardarasesor(@Body AsesorRequest asesor);
+
+
+
+        @POST("/crearasesoria_auth")
+        Call<ResponseAsesorias> guardarAsesoria(@Body Asesoria asesoria);
 }

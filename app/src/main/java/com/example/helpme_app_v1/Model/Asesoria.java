@@ -7,7 +7,7 @@ public class Asesoria implements Serializable {
     private int estudiante;
     private Date fecha;
     private String horainicio;
-    private String horafin;
+    private String horafinal;
     private int duracion;
     private int asesoriaprecio;
     private String url; //fotoo
@@ -45,12 +45,12 @@ public class Asesoria implements Serializable {
         this.duracion = duracion;
     }
 
-    public String getHorafin() {
-        return horafin;
+    public String getHorafinal() {
+        return horafinal;
     }
 
-    public void setHorafin(String horafin) {
-        this.horafin = horafin;
+    public void setHorafinal(String horafin) {
+        this.horafinal = horafin;
     }
 
     public int getAsesoriaprecio() {

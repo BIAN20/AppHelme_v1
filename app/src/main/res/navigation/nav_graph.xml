@@ -159,16 +159,6 @@
 
 
     <fragment
-        android:id="@+id/busqueda_asesoria"
-        android:name="com.example.helpme_app_v1.HomeFragment"
-        android:label="busqueda"
-        tools:layout="@layout/fragment_busqueda_asesoria" >
-        <action
-            android:id="@+id/action_busqueda_asesoria_to_detalle_busqueda"
-            app:destination="@id/detalle_busqueda" />
-        </fragment>
-
-    <fragment
         android:id="@+id/detalle_busqueda"
         android:name="com.example.helpme_app_v1.DetalleAsesoriaFragment"
         android:label="DetalleBusqueda"
@@ -176,6 +166,21 @@
         <action
             android:id="@+id/action_detalle_busqueda_to_comprasFragment"
             app:destination="@id/comprasFragment" />
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="subtitle"
+            app:argType="string" />
+        <argument
+            android:name="asesoriaprecio"
+            app:argType="com.example.helpme_app_v1.Model.AsesoriaPrecio" />
+        <action
+            android:id="@+id/action_detalle_busqueda_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
     </fragment>
     <fragment
         android:id="@+id/perfilFragment"
