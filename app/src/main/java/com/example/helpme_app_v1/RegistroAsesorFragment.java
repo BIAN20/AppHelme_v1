@@ -105,7 +105,9 @@ public class RegistroAsesorFragment extends Fragment {
                 if (binding.etNombres.getText().toString().trim().isEmpty() ||
                         binding.etApellidos.getText().toString().trim().isEmpty() ||
                         binding.etDocumento.getText().toString().trim().isEmpty() ||
-                        binding.etFechaNacimiento.getText().toString().trim().isEmpty()) {
+                        binding.etFechaNacimiento.getText().toString().trim().isEmpty() ||
+                        binding.etTelefono.getText().toString().trim().isEmpty()
+                )  {
                     Toast.makeText(getContext(), "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -114,7 +116,9 @@ public class RegistroAsesorFragment extends Fragment {
                 persona.setNombre(binding.etNombres.getText().toString().trim());
                 persona.setApellidos(binding.etApellidos.getText().toString().trim());
                 persona.setDni(binding.etDocumento.getText().toString().trim());
+
                 Date fecha = obtenerFechaNacimiento(binding.etFechaNacimiento);
+                persona.setTelefono(binding.etTelefono.getText().toString().trim());
                 if (fecha == null) return; // Validación de la fecha
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
                 String fechaFormateada = sdf.format(fecha);

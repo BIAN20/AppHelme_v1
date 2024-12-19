@@ -2,7 +2,7 @@ package com.example.helpme_app_v1.Model.tokens;
 
 public class ResponseToken {
     private TokensRequest data;
-    private String menssage;
+    private String message;
     private int status;
 
     public TokensRequest getData() {
@@ -13,12 +13,12 @@ public class ResponseToken {
         this.data = data;
     }
 
-    public String getMenssage() {
-        return menssage;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMenssage(String menssage) {
-        this.menssage = menssage;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public int getStatus() {

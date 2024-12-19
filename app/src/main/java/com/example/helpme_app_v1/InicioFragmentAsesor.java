@@ -82,7 +82,6 @@ public class InicioFragmentAsesor extends Fragment {
             if(itemId == R.id.homeasesoria){
                 replaceFragment(new HomeAsesorFragment());
                 return true;
-
             }
             else if(itemId == R.id.estaasesorias){
                 replaceFragment(new EstaAsesoriaFragment() );

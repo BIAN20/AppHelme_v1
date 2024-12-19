@@ -6,6 +6,7 @@ public class Persona implements Serializable {
     private  String apellidos;
     private String dni;
     private String fechanacimiento;
+    private String telefono;
 
     public String getFechanacimiento() {
         return fechanacimiento;
@@ -39,5 +40,11 @@ public class Persona implements Serializable {
         this.nombre = nombre;
     }
 
+    public String getTelefono() {
+        return telefono;
+    }
 
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 }

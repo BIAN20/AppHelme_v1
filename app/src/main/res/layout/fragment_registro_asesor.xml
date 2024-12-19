@@ -85,6 +85,23 @@
             app:layout_constraintWidth_percent="0.9" />
 
         <EditText
+            android:id="@+id/etTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="345dp"
+            android:inputType="number"
+            android:hint="@string/txtTelefono"
+            android:padding="10dp"
+            android:maxLength="9"
+            android:textColorHint="@color/gray"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/editborderblack"
+            app:layout_constraintTop_toBottomOf="@id/etDocumento"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.9" />
+
+        <EditText
             android:id="@+id/etPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -96,7 +113,7 @@
             android:textColorHint="@color/gray"
             android:layout_marginTop="25dp"
             android:background="@drawable/editborderblack"
-            app:layout_constraintTop_toBottomOf="@id/etDocumento"
+            app:layout_constraintTop_toBottomOf="@id/etTelefono"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintWidth_percent="0.9" />

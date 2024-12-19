@@ -114,7 +114,9 @@ public class RegistroEstudianteFragment extends Fragment {
                 if (binding.etNombres.getText().toString().trim().isEmpty() ||
                         binding.etApellidos.getText().toString().trim().isEmpty() ||
                         binding.etDocumento.getText().toString().trim().isEmpty() ||
-                        binding.etFechaNacimiento.getText().toString().trim().isEmpty()) {
+                        binding.etFechaNacimiento.getText().toString().trim().isEmpty() ||
+                        binding.etTelefono.getText().toString().trim().isEmpty()
+                ) {
                     Toast.makeText(getContext(), "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -124,6 +126,14 @@ public class RegistroEstudianteFragment extends Fragment {
                 persona.setApellidos(binding.etApellidos.getText().toString().trim());
                 persona.setDni(binding.etDocumento.getText().toString().trim());
                 Date fecha = obtenerFechaNacimiento(binding.etFechaNacimiento);
+                persona.setTelefono(binding.etTelefono.getText().toString().trim());
+                String telefono = binding.etTelefono.getText().toString().trim();
+                if (!telefono.matches("\\d{9}")) {
+                    Toast.makeText(getContext(), "Ingrese un teléfono válido (9 dígitos)", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                persona.setTelefono(telefono);
+
                 usuario.setPassword(binding.etPassword.getText().toString().trim());
 
                 if (fecha == null) return; // Validación de la fecha

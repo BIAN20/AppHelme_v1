@@ -94,22 +94,30 @@ public class TokensFragment extends Fragment {
         // Inicializa el View Binding
         binding = FragmentTokensBinding.inflate(inflater, container, false);
         fetchData(binding);
-        // Configura la lógica para el botón convertir
         binding.convertButton.setOnClickListener(v -> {
             String tokensStr = binding.tokenInput.getText().toString();
             if (!tokensStr.isEmpty()) {
                 SharedPreferences sharedPreferences = getActivity().getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
                 int user = sharedPreferences.getInt("user", 0);
                 int tokens = Integer.parseInt(tokensStr);
-                int reales = tokensglobal - tokens;
-                double soles = tokens * 0.5;
-                binding.resultText.setText("Equivale a: " + soles + " Soles");
-                TokensRequest tokencito = new TokensRequest();
-                tokencito.setTokens(reales);
-                tokencito.setIdUsuario(user);
-                tokencito.setSaldo(saldoglobal+soles);
 
-                update(tokencito, binding);
+                // Validar que la cantidad de tokens a actualizar no sea mayor que los tokens disponibles
+                if (tokens > tokensglobal) {
+                    binding.resultText.setText("Cantidad de tokens insuficientes.");
+                    Toast.makeText(getContext(), "No tienes suficientes tokens.", Toast.LENGTH_SHORT).show();
+                } else {
+                    int reales = tokensglobal - tokens;  // Tokens restantes después de la conversión
+                    double soles = tokens * 0.5;  // Conversión de tokens a soles
+                    binding.resultText.setText("Equivale a: " + soles + " Soles");
+
+                    TokensRequest tokencito = new TokensRequest();
+                    tokencito.setTokens(reales);
+                    tokencito.setIdUsuario(user);
+                    tokencito.setSaldo(saldoglobal + soles);  // Actualiza el saldo con los soles obtenidos
+
+                    // Llamada a la API para actualizar los tokens y saldo
+                    update(tokencito, binding);
+                }
             } else {
                 binding.resultText.setText("Ingresa una cantidad válida.");
             }
@@ -144,8 +152,8 @@ public class TokensFragment extends Fragment {
                             // Navegar a la pantalla de inicio o donde corresponda después de la actualización
                             fetchData(binding);
                         } else {
-                            Log.e("API_CALL", "Error del servidor: " + respuesta.getMenssage());
-                            Toast.makeText(getContext(), "Error del servidor: " + respuesta.getMenssage(), Toast.LENGTH_SHORT).show();
+                            Log.e("API_CALL", "Error del servidor: " + respuesta.getMessage());
+                            Toast.makeText(getContext(), "Error del servidor: " + respuesta.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         Log.e("API_CALL", "Respuesta nula desde el servidor.");
