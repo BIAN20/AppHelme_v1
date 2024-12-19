@@ -55,7 +55,9 @@
             android:id="@+id/token_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_centerInParent="true"
             app:layout_constraintTop_toBottomOf="@id/edit_profile_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -72,6 +74,24 @@
                 android:text="cargando"
                 android:textColor="#FFFFFF" />
 
+            <TextView
+                android:id="@+id/tokens"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cargando"
+                android:background="@color/token_red"
+                android:padding="8dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp" />
+            <TextView
+                android:id="@+id/soles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cargando"
+                android:background="@color/orange"
+                android:padding="8dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp" />
 
             <TextView
                 android:id="@+id/dni"

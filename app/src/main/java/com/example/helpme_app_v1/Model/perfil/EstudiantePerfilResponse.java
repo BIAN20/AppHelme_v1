@@ -52,11 +52,14 @@ public class EstudiantePerfilResponse {
         private String dni;
         private String carrera;
         private String universidad;
-
         private String saldo;
-        private int tokens;
         @SerializedName("intereses_academicos")
         private List<String> interesesAcademicos;
+
+
+        private int tokens;
+
+
         public EstudiantePerfilData(String nombre, String apellidos, String dni, String carrera, String universidad, List<String> interesesAcademicos, String saldo, int tokens) {
             this.nombre = nombre;
             this.apellidos = apellidos;
@@ -67,7 +70,6 @@ public class EstudiantePerfilResponse {
             this.saldo = saldo;
             this.tokens = tokens;
         }
-
         public EstudiantePerfilData() {
         }
 

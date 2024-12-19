@@ -36,16 +36,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class PerfilEstudianteFragment extends Fragment {
     private FragmentPerfilEstudianteBinding binding;
 
-    public PerfilEstudianteFragment() {
-        // Required empty public constructor
-    }
-
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
     private String mParam1;
     private String mParam2;
 
+    public PerfilEstudianteFragment() {
+        // Required empty public constructor
+    }
     public static PerfilEstudianteFragment newInstance(String param1, String param2) {
         PerfilEstudianteFragment fragment = new PerfilEstudianteFragment();
         Bundle args = new Bundle();
@@ -111,6 +110,7 @@ public class PerfilEstudianteFragment extends Fragment {
         int user = sharedPreferences.getInt("user", 0);
 
         service.obtenerPerfilEstudiante(user).enqueue(new Callback<EstudiantePerfilResponse>() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onResponse(Call<EstudiantePerfilResponse> call, Response<EstudiantePerfilResponse> response) {
                 Log.d("API_CALL", "onResponse: Llamada completada con código: " + response.code());
@@ -122,10 +122,10 @@ public class PerfilEstudianteFragment extends Fragment {
                             // Asignar los datos a los elementos de la vista
                             binding.profileName.setText(studentResponse.getData().getNombre() + " " + studentResponse.getData().getApellidos());
                             binding.carreraButtom.setText(studentResponse.getData().getCarrera());
+                            binding.tokens.setText(String.valueOf(studentResponse.getData().getTokens()));
+                            binding.soles.setText(studentResponse.getData().getSaldo() + " soles");
                             binding.dni.setText("DNI: " + studentResponse.getData().getDni());
                             binding.universityButton.setText(studentResponse.getData().getUniversidad());
-
-                            // Mostrar intereses académicos
                             List<String> intereses = studentResponse.getData().getInteresesAcademicos();
                             LinearLayout interestsContainer = binding.badgesContainerintereses;
 
@@ -186,8 +186,8 @@ public class PerfilEstudianteFragment extends Fragment {
                 Toast.makeText(getContext(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
     }
-
-
-
 }
